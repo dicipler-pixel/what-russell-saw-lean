@@ -148,7 +148,7 @@ theorem effPot_hasDerivAt (M L r : ℝ) (hr : r ≠ 0) :
   have h := ((hw.const_mul (-M)).add ((hw.pow 2).const_mul (L ^ 2 / 2))).sub
     ((hw.pow 3).const_mul (M * L ^ 2))
   unfold effPot effPot'
-  exact h.congr_deriv (by field_simp <;> ring)
+  exact h.congr_deriv (by norm_num [inv_pow] <;> field_simp <;> ring)
 
 theorem effPot'_hasDerivAt (M L r : ℝ) (hr : r ≠ 0) :
     HasDerivAt (effPot' M L) (effPot'' M L r) r := by
@@ -156,7 +156,7 @@ theorem effPot'_hasDerivAt (M L r : ℝ) (hr : r ≠ 0) :
   have h := (((hw.pow 2).const_mul M).sub ((hw.pow 3).const_mul (L ^ 2))).add
     ((hw.pow 4).const_mul (3 * M * L ^ 2))
   unfold effPot' effPot''
-  exact h.congr_deriv (by field_simp <;> ring)
+  exact h.congr_deriv (by norm_num [inv_pow] <;> field_simp <;> ring)
 
 theorem effPot'_mul (M L r : ℝ) (hr : r ≠ 0) :
     effPot' M L r * r ^ 4 = M * r ^ 2 - L ^ 2 * r + 3 * M * L ^ 2 := by
