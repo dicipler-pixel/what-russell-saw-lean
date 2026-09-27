@@ -1,6 +1,6 @@
 name = "what-russell-saw-lean"
 version = "1.0.0"
-defaultTargets = ["RussellRebuild", "RussellPhyslib"]
+defaultTargets = ["RussellRebuild", "RussellPhyslib", "RussellOrbits"]
 
 # Physlib brings Mathlib v4.34.1 with it.
 [[require]]
@@ -14,4 +14,8 @@ srcDir = "lean"
 
 [[lean_lib]]
 name = "RussellPhyslib"
+srcDir = "lean"
+
+[[lean_lib]]
+name = "RussellOrbits"
 srcDir = "lean"

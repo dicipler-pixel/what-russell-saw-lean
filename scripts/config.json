@@ -1,1 +1,23 @@
-{"modules":[{"module":"RussellRebuild","path":"lean/RussellRebuild.lean"},{"module":"RussellPhyslib","path":"lean/RussellPhyslib.lean"}],"expected_theorems":28,"expected_false_controls":3,"root_imports":["RussellRebuild","RussellPhyslib"]}
+{
+  "modules": [
+    {
+      "module": "RussellRebuild",
+      "path": "lean/RussellRebuild.lean"
+    },
+    {
+      "module": "RussellPhyslib",
+      "path": "lean/RussellPhyslib.lean"
+    },
+    {
+      "module": "RussellOrbits",
+      "path": "lean/RussellOrbits.lean"
+    }
+  ],
+  "expected_theorems": 43,
+  "expected_false_controls": 3,
+  "root_imports": [
+    "RussellRebuild",
+    "RussellPhyslib",
+    "RussellOrbits"
+  ]
+}
