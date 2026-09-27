@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these Lean proofs, please cite them as below."
+title: "What Russell Saw: Lean proofs"
+authors:
+  - family-names: "Beasley"
+    given-names: "Jeromie"
+version: 1.0.0
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/dicipler-pixel/what-russell-saw-lean"
+keywords:
+  - Lean 4
+  - Mathlib
+  - Physlib
+  - formal verification
+  - orbital mechanics
+  - Walter Russell
+references:
+  - type: article
+    title: "What Russell Saw: Walter Russell's Universe of Paired Motion, Read Against a Century of Physics"
+    authors:
+      - family-names: "Beasley"
+        given-names: "Jeromie"
+    doi: "10.5281/zenodo.22986656"
