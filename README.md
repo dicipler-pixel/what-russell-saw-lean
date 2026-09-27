@@ -9,7 +9,8 @@
 ![Theorems](https://img.shields.io/badge/theorems-43-2EA043)
 ![sorry](https://img.shields.io/badge/sorry-0-2EA043)
 ![Physlib](https://img.shields.io/badge/uses-Physlib-8A2BE2)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Code: MIT](https://img.shields.io/badge/code-MIT-lightgrey)
+![Text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-lightgrey)
 [![Paper DOI](https://img.shields.io/badge/paper-10.5281%2Fzenodo.22986656-blue)](https://doi.org/10.5281/zenodo.22986656)
 
 Jeromie Beasley
@@ -74,5 +75,4 @@ The deposit also holds the paper, the interactive mixer, the ledger grading 386 
 
 ## Citation, licence and AI use
 
-Citation metadata is in [`CITATION.cff`](CITATION.cff). The Lean code is released under the
-[MIT License](LICENSE). How AI tools were used is stated in [`AI_USE.md`](AI_USE.md).
+Citation metadata is in [`CITATION.cff`](CITATION.cff). The Lean code and scripts are released under the [MIT License](LICENSE) and the written text under [CC BY 4.0](LICENSE-CC-BY-4.0.md); see [`LICENSING.md`](LICENSING.md). How AI tools were used is stated in [`AI_USE.md`](AI_USE.md).
