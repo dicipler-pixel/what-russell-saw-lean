@@ -3,10 +3,13 @@
 Lean proves exactly the statements written, under exactly the hypotheses written. Measured
 masses, speeds and distances enter only as numerals or hypotheses.
 
-* The Binet linearisation is proved at the level of its slope; the apsidal angle `π/√(3 − p)`
-  itself, and the derivation of the orbit equation from the force law, are not formalized.
-* `gr_effective_steepness` takes the matching of the linearised coefficients as a hypothesis;
-  the relativistic orbit equation `u'' + u = M/L² + 3Mu²` is not derived here.
+* Binet's equation and its relativistic form are taken as the starting point; their derivation
+  from the force law and from the Schwarzschild metric is not formalized.
+* The apsidal angle is proved for the linearised equation: its solution `A cos(√κ θ)` is
+  verified and its half-period is `π/√κ`. Uniqueness of solutions and the error of the
+  linearisation for finite departures are not formalized.
+* The ISCO is derived from the effective potential `V(r)` as stated; the potential itself is
+  an input.
 * Maxwell stress, Ampère's force and the Rankine vortex are checked as algebraic identities
   for the stated fields; no electromagnetic or fluid equations are solved.
 * The inspiral and mass-loss results assume the stated rate laws; they do not derive them.

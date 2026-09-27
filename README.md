@@ -6,7 +6,7 @@
 
 [![Lean proof check](https://github.com/dicipler-pixel/what-russell-saw-lean/actions/workflows/build.yml/badge.svg)](https://github.com/dicipler-pixel/what-russell-saw-lean/actions/workflows/build.yml)
 ![Lean](https://img.shields.io/badge/Lean-v4.34.1-blue)
-![Theorems](https://img.shields.io/badge/theorems-28-2EA043)
+![Theorems](https://img.shields.io/badge/theorems-43-2EA043)
 ![sorry](https://img.shields.io/badge/sorry-0-2EA043)
 ![Physlib](https://img.shields.io/badge/uses-Physlib-8A2BE2)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
@@ -37,7 +37,11 @@ stable orbit.
 | §II | Russell's `v ∝ 1/a` forces `n = −2` (an inverse-cube force); period exponents 2 and 3/2 | `russell_speed_forces_inverse_cube`, `period_exponents` |
 | §II | Newton's circular orbit: quadrupling the radius halves the speed; Russell's speed law contradicts it (Physlib) | `RussellPhyslib.circular_speed_quarter_radius`, `RussellPhyslib.russell_speed_law_fails` |
 | §III | Binet slope at the circular orbit is `p − 2`; restoring coefficient `3 − p` vanishes at Russell's `p = 3` | `binet_slope_at_circle`, `restoring_coefficients` |
+| §III | **As calculus**: the derivative of Binet's right-hand side gives the linearised coefficient `3 − p` | `RussellOrbits.binet_rhs_hasDerivAt`, `RussellOrbits.binet_restoring_coefficient` |
+| §III | **Apsidal angle**: `A cos(√κ θ)` solves `δ'' = −κδ` and falls strictly from `A` to `−A` on `[0, π/√κ]`, flat at both ends; Newton's `p = 2` gives `π`; as `p → 3⁻` the angle grows without bound | `RussellOrbits.departure_solves`, `RussellOrbits.apsidal_angle`, `RussellOrbits.newton_apsidal_angle`, `RussellOrbits.apsidal_angle_diverges` |
 | §III | Relativistic effective steepness `2 + 6M/r` equals 3 exactly at `r = 6M` | `gr_effective_steepness`, `isco_is_russell` |
+| §III | **As calculus**: the relativistic Binet slope is `6Mu`, so the restoring coefficient vanishes exactly at `r = 6M` | `RussellOrbits.gr_rhs_hasDerivAt`, `RussellOrbits.gr_restoring_zero_iff` |
+| §III | **The ISCO from the Schwarzschild effective potential**: `V′ = V″ = 0` exactly when `r = 6M` and `L² = 12M²` | `RussellOrbits.effPot_hasDerivAt`, `RussellOrbits.effPot'_hasDerivAt`, `RussellOrbits.isco_from_potential` |
 | §IV | The effective potential sits above its minimum by a perfect square; with no spin there is no valley | `ueff_square`, `ueff_min`, `no_spin_no_valley` |
 | §V | Neutral point `x = d/(1 + √(m/M))`; mutual centre; the Earth–Moon centre lies inside the Earth | `neutral_point`, `barycentre_balance`, `earth_moon_barycentre_inside` |
 | §VI | Maxwell stress: tension along a field line, pressure across; parallel currents attract; the old ampere definition | `maxwell_stress_along_across`, `ampere_sign`, `ampere_definition` |
@@ -47,8 +51,9 @@ stable orbit.
 | §X | A cone cut is an ellipse exactly when the plane is steeper than the cone | `cone_ellipse_iff` |
 | §XI | Periodic-table rows 2, 8, 8, 18, 18, 32, 32 hold 118 elements; the valence wave is symmetric | `row_lengths`, `valence_palindrome` |
 
-Files: [`lean/RussellRebuild.lean`](lean/RussellRebuild.lean) (25 theorems, Mathlib) and
-[`lean/RussellPhyslib.lean`](lean/RussellPhyslib.lean) (3 theorems, Physlib). What is not
+Files: [`lean/RussellRebuild.lean`](lean/RussellRebuild.lean) (25 theorems, Mathlib),
+[`lean/RussellOrbits.lean`](lean/RussellOrbits.lean) (15 theorems, Mathlib: the orbit claims as
+calculus) and [`lean/RussellPhyslib.lean`](lean/RussellPhyslib.lean) (3 theorems, Physlib). What is not
 proved is in [`LIMITATIONS.md`](LIMITATIONS.md).
 
 ## How it is checked
