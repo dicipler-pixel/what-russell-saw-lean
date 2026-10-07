@@ -4,8 +4,9 @@ own models rather than against one written-out solution.
 
 * Section I of the paper: for every trajectory of a harmonic oscillator that obeys its
   equation of motion (not only `A cos ωt`), kinetic plus potential energy is the same at
-  every time. This is Russell's "every change is a pair of opposed motions summing to a
-  constant", proved from Physlib's Lagrangian model of the oscillator.
+  every time, proved from Physlib's Lagrangian model of the oscillator. The paper reads this
+  as Russell's "every change is a pair of opposed motions summing to a constant"; that reading
+  is not itself a Lean statement.
 * Section II: in Physlib's circular-orbit model `v² = GM/r`, quadrupling the radius halves
   the speed. Russell's law `v ∝ 1/a` would quarter it, so it cannot hold for an
   inverse-square pull.

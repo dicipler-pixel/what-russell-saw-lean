@@ -6,12 +6,13 @@ What Russell Saw — the orbit claims as calculus, not just the algebra around t
 * The apsidal angle: for `κ > 0` the departure `A cos(√κ θ)` solves `δ'' = -κ δ`, falls
   strictly from `A` to `-A` on `[0, π/√κ]` and is flat at both ends, so near point and far
   point are `π/√κ` apart. Newton's `p = 2` gives `π` (a closed ellipse); as `p → 3` from
-  below the angle grows without bound — Russell's inverse cube never returns.
+  below the angle grows without bound, so in the linearised orbit the far point takes ever
+  longer to return as the force approaches Russell's inverse cube.
 * General relativity: `u'' + u = M/L² + 3Mu²` has right-hand slope `6Mu`, so the restoring
   coefficient `1 - 6Mu₀` vanishes exactly at `r = 6M`.
 * The Schwarzschild effective potential `V = -M/r + L²/(2r²) - ML²/r³`: its first and second
-  derivatives both vanish exactly when `r = 6M` and `L² = 12M²` — the innermost stable
-  circular orbit, derived from the potential itself.
+  derivatives both vanish exactly when `r = 6M` and `L² = 12M²` — the marginally stable
+  circular orbit (the innermost stable circular orbit), derived from the potential itself.
 
 Units `G = c = 1`. Jeromie Beasley, 2026.
 -/
@@ -91,7 +92,8 @@ orbit closes. -/
 theorem newton_apsidal_angle : π / Real.sqrt (3 - 2) = π := by norm_num
 
 /-- As the force steepens toward Russell's inverse cube (`p → 3⁻`), the apsidal angle
-`π/√(3 - p)` grows without bound: the far point never comes back. -/
+`π/√(3 - p)` grows without bound: in the linearised orbit the far point takes ever longer to
+return. -/
 theorem apsidal_angle_diverges :
     Tendsto (fun p : ℝ => π / Real.sqrt (3 - p)) (𝓝[<] 3) atTop := by
   have h0 : Tendsto (fun p : ℝ => Real.sqrt (3 - p)) (𝓝[<] 3) (𝓝[>] 0) := by

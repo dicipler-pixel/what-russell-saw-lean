@@ -22,11 +22,14 @@ Jeromie Beasley
 ## The idea in one line
 
 Russell's axiom is one substance whose every change is a pair of opposed motions summing to a
-constant. That is the oscillator: kinetic and potential energy trade places and their sum never
-moves. Where Russell's laws of motion go wrong, they go wrong in a precise way: his planet
-speeds `v ∝ 1/a` belong to an inverse-cube pull, and an inverse-cube pull is exactly where
-orbits stop closing. General relativity reaches that same steepness at `r = 6M`, the innermost
-stable orbit.
+constant. The paper reads this as the oscillator, whose kinetic and potential energy trade
+places while their sum never moves; Lean proves that energy conservation, not the reading.
+Where Russell's laws of motion go wrong, they go wrong in a precise way: his planet speeds
+`v ∝ 1/a` belong to an inverse-cube pull, and an inverse-cube pull is exactly where a
+near-circular orbit's far point stops coming back (in the linearised orbit the apsidal angle
+`π/√(3 − p)` grows without bound as `p → 3` from below). General relativity reaches that same
+steepness at `r = 6M`, where the circular orbit is marginally stable: the innermost stable
+circular orbit.
 
 ## What is proved
 
@@ -34,8 +37,8 @@ stable orbit.
 | :--- | :--- | :--- |
 | §I | Paired-motion constant for **every** solution of the oscillator's equation of motion (Physlib) | `RussellPhyslib.paired_motion_constant` |
 | §I | The explicit solution `A cos ωt` keeps `½kx² + p²/2m = ½kA²` | `pendulum_energy_constant` |
-| §II | Mechanical similarity: time exponent `1 − n/2` for `U ∝ rⁿ` | `similarity_time_exponent` |
-| §II | Russell's `v ∝ 1/a` forces `n = −2` (an inverse-cube force); period exponents 2 and 3/2 | `russell_speed_forces_inverse_cube`, `period_exponents` |
+| §II | Mechanical similarity, as exponent arithmetic: scaling lengths by `λ` and times by `λ^(1 − n/2)` reproduces the force scaling `λ^(n − 1)` of `U ∝ rⁿ` | `similarity_time_exponent` |
+| §II | Taking the similarity scaling `v ∝ λ^(n/2)` as given, Russell's `v ∝ 1/a` means `n/2 = −1`, so `n = −2` (the paper's inverse-cube force); period exponents 2 and 3/2 | `russell_speed_forces_inverse_cube`, `period_exponents` |
 | §II | Newton's circular orbit: quadrupling the radius halves the speed; Russell's speed law contradicts it (Physlib) | `RussellPhyslib.circular_speed_quarter_radius`, `RussellPhyslib.russell_speed_law_fails` |
 | §III | Binet slope at the circular orbit is `p − 2`; restoring coefficient `3 − p` vanishes at Russell's `p = 3` | `binet_slope_at_circle`, `restoring_coefficients` |
 | §III | **As calculus**: the derivative of Binet's right-hand side gives the linearised coefficient `3 − p` | `RussellOrbits.binet_rhs_hasDerivAt`, `RussellOrbits.binet_restoring_coefficient` |
@@ -48,8 +51,8 @@ stable orbit.
 | §VI | Maxwell stress: tension along a field line, pressure across; parallel currents attract; the old ampere definition | `maxwell_stress_along_across`, `ampere_sign`, `ampere_definition` |
 | §VII | Rankine vortex pressure deficit `ρv²`; 9,720 Pa at 90 m/s | `rankine_total_deficit`, `rankine_90` |
 | §VIII | The tide is a difference of pulls: two bulges | `tide_two_bulges` |
-| §IX | Mass loss widens orbits; the inspiral step grows as `a^(−3/2)` | `mass_loss_drift`, `inspiral_step` |
-| §X | A cone cut is an ellipse exactly when the plane is steeper than the cone | `cone_ellipse_iff` |
+| §IX | With `a·M` held fixed, `ȧ = −a Ṁ/M` (the paper's widening for `Ṁ < 0`); with the stated rate law and period, the inspiral step scales as `a^(−3/2)` | `mass_loss_drift`, `inspiral_step` |
+| §X | Taking the cut's eccentricity `e = cos β / cos α` as given, `e < 1` exactly when `β > α`: the cut is an ellipse exactly when the plane is steeper than the cone | `cone_ellipse_iff` |
 | §XI | Periodic-table rows 2, 8, 8, 18, 18, 32, 32 hold 118 elements; the valence wave is symmetric | `row_lengths`, `valence_palindrome` |
 
 Files: [`lean/RussellRebuild.lean`](lean/RussellRebuild.lean) (25 theorems, Mathlib),
